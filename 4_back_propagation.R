@@ -18,8 +18,8 @@ for(i in 1:10000){
   cost_tracker[i] <- cost(train_y, Y_hat)
   
   # calculate the gradient at the current y-hat
-  d3 <- (-(train_y - Y_hat) * sigmoidprime(Z3 + (B2 %*% rep(1, 120) %>% t)))
-  d2 <- d3 %*% t(W2) * sigmoidprime(Z2 + (B1 %*% rep(1, 120) %>% t))
+  d3 <- (-(train_y - Y_hat) * sigmoidprime(Z3 + (B2 %*% rep(1, dim(train)[1]) %>% t)))
+  d2 <- d3 %*% t(W2) * sigmoidprime(Z2 + (B1 %*% rep(1, dim(train)[1]) %>% t))
   grad_w2 <- t(A2) %*% d3
   grad_w1 <- t(train) %*% d2
   grad_b2 <- rep(1, dim(train)[1]) %*% d3
