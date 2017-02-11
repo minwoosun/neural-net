@@ -1,12 +1,12 @@
 library(dplyr)
 
-# Split iris to train and test set
-set.seed(5)
-source("2_data_prep.R")
-
 # Load the cost function, sigmoid activation
 # function, and the derivative of sigmoid function
 source("1_functions.R")
+
+# Split iris to train and test set
+set.seed(5)
+source("2_data_prep.R")
 
 # Select values for the nodes
 input_size <- 4
