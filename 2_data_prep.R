@@ -24,9 +24,7 @@ test_org <- iris[-rows,]
 # one hot encoding for training set
 # train_Species <- as.integer(iris[rows,]$Species)
 
-train_Species <- iris[rows,]$Species %>%
-  as.integer %>% 
-  as.matrix
+train_Species <- as.integer(iris[rows,]$Species)
 
 train_y <- matrix(rep(0, 3*length(train_Species)),
                   nrow = length(train_Species), byrow=TRUE)
